@@ -1,0 +1,41 @@
+﻿@model IEnumerable<TestApp_MVC.Models.StudentViewModel>
+<div class="row">
+    <div class="jumbotron">
+        Student List
+    </div>
+    <div>
+
+        <div id="mydiv">
+            <table id="myTable" class="table table-striped">
+                <thead>
+                    <tr style="background-color:rgb(70,130,180);color:white">
+                        <th style="width: 12px !important">Id</th>
+                        <th style="width: 55px !important">Name</th>
+                        <th style="width: 229px !important">Email</th>
+                        <th style="width: 130px !important">Pocket Money</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.Count() > 0)
+                    {
+                        foreach (var student in Model)
+                        {
+                            <tr>
+                                <td>@student.Id</td>
+                                <td>@student.FirstName @student.LastName</td>
+                                <td>@student.Email</td>
+                                <td>@student.PocketMoney</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4">No Data Found</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+﻿@model TestApp_MVC.Models.StudentModuleViewModel
+
+@{
+    ViewBag.Title = "Students Module";
+}
+
+@Html.Partial("_PartialAddStudent", Model.NewStudent)
+
+@Html.Partial("_PartialStudentList", Model.StudentList)
+
+@Html.Partial("_PartialFeaturedStudent", Model.FeaturedStudent)
